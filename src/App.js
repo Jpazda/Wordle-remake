@@ -45,7 +45,7 @@ function App() {
   };
 
   const onEnter = () => {
-    if (currentAttempt.letterPos != 5) return;
+    if (currentAttempt.letterPos !== 5) return;
     let currentWord = "";
     for (let i = 0; i < 5; i++) {
       currentWord += board[currentAttempt.attempt][i];
@@ -71,7 +71,7 @@ function App() {
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
-      setCorrectWord(words.correctWord);
+      setCorrectWord(words.correctWord.toUpperCase());
     });
   }, []);
 
