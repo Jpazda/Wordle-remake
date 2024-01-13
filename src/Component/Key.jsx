@@ -3,7 +3,7 @@ import { AppContext } from "../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 
-export const Key = ({ keyVal, bigKey }) => {
+export const Key = ({ keyVal, bigKey, disabled }) => {
   const { onSelectLetter, onDelete, onEnter } = useContext(AppContext);
 
   const selectLetter = () => {
@@ -17,7 +17,7 @@ export const Key = ({ keyVal, bigKey }) => {
   };
 
   return (
-    <div className="key" id={bigKey && "big"} onClick={selectLetter}>
+    <div className="key" id={bigKey ? "big" : disabled && "disabled"} onClick={selectLetter}>
       {keyVal}
     </div>
   );
