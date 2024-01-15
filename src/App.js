@@ -23,7 +23,7 @@ function App() {
   const [gameOver, setGameOver] = useState({ gameOver: false, winner: false });
 
   const onSelectLetter = (keyVal) => {
-    if (currentAttempt.letterPos > 4) return;
+    if (currentAttempt.letterPos > 5) return;
     const newBoard = [...board];
     newBoard[currentAttempt.attempt][currentAttempt.letterPos] = keyVal;
     setBoard(newBoard);
@@ -45,9 +45,9 @@ function App() {
   };
 
   const onEnter = () => {
-    if (currentAttempt.letterPos !== 5) return;
+    if (currentAttempt.letterPos !== 6) return;
     let currentWord = "";
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       currentWord += board[currentAttempt.attempt][i];
     }
     if (wordSet.has(currentWord.toLowerCase())) {
